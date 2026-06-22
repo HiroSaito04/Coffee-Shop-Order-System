@@ -1,0 +1,534 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" fx:id="OrderManagerScene" maxHeight="800.0" maxWidth="1280.0" minHeight="800.0" minWidth="1280.0" prefHeight="800.0" prefWidth="1280.0" styleClass="color-white" stylesheets="@../styles/StyleSheet.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.OrderMenuController">
+   <children>
+      <Pane prefHeight="100.0" prefWidth="1280.0" stylesheets="@../styles/StyleSheet.css">
+         <children>
+            <ImageView fitHeight="78.0" fitWidth="140.0" layoutX="14.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/TomoCoffee_Logo.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="logoutButton" alignment="CENTER_RIGHT" layoutX="1057.0" layoutY="24.0" mnemonicParsing="false" onAction="#logout" prefHeight="53.0" prefWidth="188.0" styleClass="button-normal" stylesheets="@../styles/StyleSheet.css" text="     Log Out" textAlignment="RIGHT" textFill="#40342e">
+               <font>
+                  <Font name="Verdana Bold" size="24.0" />
+               </font>
+            </Button>
+            <FontAwesomeIcon disable="true" fill="#40342e" glyphName="USER" layoutX="1083.0" layoutY="63.0" size="3em" styleClass="color-brown" text="" wrappingWidth="30.0" />
+            <Text fill="#40342e" layoutX="180.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="normal-button" text="Welcome to Order Menu!" wrappingWidth="633.8250122070312">
+               <font>
+                  <Font name="Verdana" size="35.0" />
+               </font>
+            </Text>
+         </children>
+         <styleClass>
+            <String fx:value="main-background-color" />
+            <String fx:value="color-yellow" />
+         </styleClass>
+      </Pane>
+      <Pane layoutY="100.0" prefHeight="100.0" prefWidth="1280.0">
+         <children>
+            <Button disable="true" layoutX="55.0" layoutY="25.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="345.0" styleClass="button-normal" text="Order Menu" textFill="#0000005c">
+               <font>
+                  <Font name="Verdana Bold" size="25.0" />
+               </font>
+            </Button>
+            <Button layoutX="468.0" layoutY="25.0" mnemonicParsing="false" onAction="#toPendingOrders" prefHeight="50.0" prefWidth="345.0" styleClass="button-normal" text="Pending Orders" textFill="#40342e">
+               <font>
+                  <Font name="Verdana Bold" size="25.0" />
+               </font>
+            </Button>
+            <Button alignment="CENTER" layoutX="880.0" layoutY="25.0" mnemonicParsing="false" onAction="#toCompletedOrders" prefHeight="50.0" prefWidth="345.0" styleClass="button-normal" text="Completed Orders" textFill="#40342e">
+               <font>
+                  <Font name="Verdana Bold" size="25.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <GridPane layoutX="14.0" layoutY="192.0" prefHeight="560.0" prefWidth="880.0">
+        <columnConstraints>
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="418.0" minWidth="10.0" prefWidth="280.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="552.0" minWidth="10.0" prefWidth="280.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="552.0" minWidth="10.0" prefWidth="280.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="260.0" minHeight="10.0" prefHeight="160.0" valignment="CENTER" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="260.0" minHeight="10.0" prefHeight="160.0" valignment="CENTER" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="260.0" minHeight="10.0" prefHeight="160.0" valignment="CENTER" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Pane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#1f93ff00" height="160.0" layoutX="7.0" layoutY="14.0" stroke="#40342e" strokeType="INSIDE" strokeWidth="2.0" width="280.0" />
+                  <AnchorPane layoutX="17.0" layoutY="19.0" prefHeight="150.0" prefWidth="261.0">
+                     <children>
+                        <ImageView fitHeight="150.0" fitWidth="95.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/OM_CaramelMacchiato.png" />
+                           </image>
+                        </ImageView>
+                        <Text fill="#40342e" layoutX="109.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="brown" text="Caramel Macchiato" textAlignment="CENTER" wrappingWidth="150.0">
+                           <font>
+                              <Font name="Verdana Bold" size="20.0" />
+                           </font>
+                        </Text>
+                        <Button fx:id="add1" layoutX="190.0" layoutY="101.0" mnemonicParsing="false" onAction="#handleAddAction" prefHeight="39.0" prefWidth="60.0" text="Add" textFill="#6f4b39">
+                           <font>
+                              <Font name="Verdana" size="10.0" />
+                           </font>
+                        </Button>
+                        <TextField fx:id="quan1" layoutX="118.0" layoutY="101.0" prefHeight="39.0" prefWidth="60.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                        <Text layoutX="118.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantity" textAlignment="CENTER" wrappingWidth="60.0">
+                           <font>
+                              <Font name="Verdana Italic" size="10.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </Pane>
+            <Pane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+               <children>
+                  <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#1f93ff00" height="160.0" layoutX="7.0" layoutY="14.0" stroke="#40342e" strokeType="INSIDE" strokeWidth="2.0" width="280.0" />
+                  <AnchorPane layoutX="17.0" layoutY="19.0" prefHeight="150.0" prefWidth="261.0">
+                     <children>
+                        <ImageView fitHeight="150.0" fitWidth="95.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/OM_DarkMochaLatte.png" />
+                           </image>
+                        </ImageView>
+                        <Text fill="#40342e" layoutX="109.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="brown" text="Dark Mocha Latte" textAlignment="CENTER" wrappingWidth="150.0">
+                           <font>
+                              <Font name="Verdana Bold" size="20.0" />
+                           </font>
+                        </Text>
+                        <Button fx:id="add4" layoutX="190.0" layoutY="101.0" mnemonicParsing="false" onAction="#handleAddAction" prefHeight="39.0" prefWidth="60.0" text="Add" textFill="#6f4b39">
+                           <font>
+                              <Font name="Verdana" size="10.0" />
+                           </font>
+                        </Button>
+                        <TextField fx:id="quan4" layoutX="118.0" layoutY="101.0" prefHeight="39.0" prefWidth="60.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                        <Text layoutX="118.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantity" textAlignment="CENTER" wrappingWidth="60.0">
+                           <font>
+                              <Font name="Verdana Italic" size="10.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </Pane>
+            <Pane layoutX="10.0" layoutY="197.0" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+               <children>
+                  <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#1f93ff00" height="160.0" layoutX="7.0" layoutY="14.0" stroke="#40342e" strokeType="INSIDE" strokeWidth="2.0" width="280.0" />
+                  <AnchorPane layoutX="17.0" layoutY="19.0" prefHeight="150.0" prefWidth="261.0">
+                     <children>
+                        <ImageView fitHeight="150.0" fitWidth="95.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/OM_PistachioEspresso.png" />
+                           </image>
+                        </ImageView>
+                        <Text fill="#40342e" layoutX="109.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="brown" text="Pistachio Espresso" textAlignment="CENTER" wrappingWidth="150.0">
+                           <font>
+                              <Font name="Verdana Bold" size="20.0" />
+                           </font>
+                        </Text>
+                        <Button fx:id="add7" layoutX="190.0" layoutY="101.0" mnemonicParsing="false" onAction="#handleAddAction" prefHeight="39.0" prefWidth="60.0" text="Add" textFill="#6f4b39">
+                           <font>
+                              <Font name="Verdana" size="10.0" />
+                           </font>
+                        </Button>
+                        <TextField fx:id="quan7" layoutX="118.0" layoutY="101.0" prefHeight="39.0" prefWidth="60.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                        <Text layoutX="118.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantity" textAlignment="CENTER" wrappingWidth="60.0">
+                           <font>
+                              <Font name="Verdana Italic" size="10.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </Pane>
+            <Pane layoutX="10.0" layoutY="384.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+               <children>
+                  <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#1f93ff00" height="160.0" layoutX="7.0" layoutY="14.0" stroke="#40342e" strokeType="INSIDE" strokeWidth="2.0" width="280.0" />
+                  <AnchorPane layoutX="17.0" layoutY="19.0" prefHeight="150.0" prefWidth="261.0">
+                     <children>
+                        <ImageView fitHeight="150.0" fitWidth="95.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/OM_ChocoEspresso.png" />
+                           </image>
+                        </ImageView>
+                        <Text fill="#40342e" layoutX="109.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="brown" text="Choco Espresso" textAlignment="CENTER" wrappingWidth="150.0">
+                           <font>
+                              <Font name="Verdana Bold" size="20.0" />
+                           </font>
+                        </Text>
+                        <Button fx:id="add2" layoutX="190.0" layoutY="101.0" mnemonicParsing="false" onAction="#handleAddAction" prefHeight="39.0" prefWidth="60.0" text="Add" textFill="#6f4b39">
+                           <font>
+                              <Font name="Verdana" size="10.0" />
+                           </font>
+                        </Button>
+                        <TextField fx:id="quan2" layoutX="118.0" layoutY="101.0" prefHeight="39.0" prefWidth="60.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                        <Text layoutX="118.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantity" textAlignment="CENTER" wrappingWidth="60.0">
+                           <font>
+                              <Font name="Verdana Italic" size="10.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </Pane>
+            <Pane layoutX="304.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#1f93ff00" height="160.0" layoutX="7.0" layoutY="14.0" stroke="#40342e" strokeType="INSIDE" strokeWidth="2.0" width="280.0" />
+                  <AnchorPane layoutX="17.0" layoutY="19.0" prefHeight="150.0" prefWidth="261.0">
+                     <children>
+                        <ImageView fitHeight="150.0" fitWidth="95.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/OM_DirtyMatchaLatte.png" />
+                           </image>
+                        </ImageView>
+                        <Text fill="#40342e" layoutX="109.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="brown" text="Dirty Matcha Latte" textAlignment="CENTER" wrappingWidth="150.0">
+                           <font>
+                              <Font name="Verdana Bold" size="20.0" />
+                           </font>
+                        </Text>
+                        <Button fx:id="add5" layoutX="190.0" layoutY="101.0" mnemonicParsing="false" onAction="#handleAddAction" prefHeight="39.0" prefWidth="60.0" text="Add" textFill="#6f4b39">
+                           <font>
+                              <Font name="Verdana" size="10.0" />
+                           </font>
+                        </Button>
+                        <TextField fx:id="quan5" layoutX="118.0" layoutY="101.0" prefHeight="39.0" prefWidth="60.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                        <Text layoutX="118.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantity" textAlignment="CENTER" wrappingWidth="60.0">
+                           <font>
+                              <Font name="Verdana Italic" size="10.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </Pane>
+            <Pane layoutX="304.0" layoutY="197.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <children>
+                  <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#1f93ff00" height="160.0" layoutX="7.0" layoutY="14.0" stroke="#40342e" strokeType="INSIDE" strokeWidth="2.0" width="280.0" />
+                  <AnchorPane layoutX="17.0" layoutY="19.0" prefHeight="150.0" prefWidth="261.0">
+                     <children>
+                        <ImageView fitHeight="150.0" fitWidth="95.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/OM_PistanchioStrawberry.png" />
+                           </image>
+                        </ImageView>
+                        <Text fill="#40342e" layoutX="109.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="brown" text="Pistachio Strawberry" textAlignment="CENTER" wrappingWidth="150.0">
+                           <font>
+                              <Font name="Verdana Bold" size="20.0" />
+                           </font>
+                        </Text>
+                        <Button fx:id="add8" layoutX="190.0" layoutY="101.0" mnemonicParsing="false" onAction="#handleAddAction" prefHeight="39.0" prefWidth="60.0" text="Add" textFill="#6f4b39">
+                           <font>
+                              <Font name="Verdana" size="10.0" />
+                           </font>
+                        </Button>
+                        <TextField fx:id="quan8" layoutX="118.0" layoutY="101.0" prefHeight="39.0" prefWidth="60.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                        <Text layoutX="118.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantity" textAlignment="CENTER" wrappingWidth="60.0">
+                           <font>
+                              <Font name="Verdana Italic" size="10.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </Pane>
+            <Pane layoutX="304.0" layoutY="384.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
+               <children>
+                  <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#1f93ff00" height="160.0" layoutX="7.0" layoutY="14.0" stroke="#40342e" strokeType="INSIDE" strokeWidth="2.0" width="280.0" />
+                  <AnchorPane layoutX="17.0" layoutY="19.0" prefHeight="150.0" prefWidth="261.0">
+                     <children>
+                        <ImageView fitHeight="150.0" fitWidth="95.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/OM_ChocolatePistachio.png" />
+                           </image>
+                        </ImageView>
+                        <Text fill="#40342e" layoutX="109.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="brown" text="Chocolate Pistachio" textAlignment="CENTER" wrappingWidth="150.0">
+                           <font>
+                              <Font name="Verdana Bold" size="20.0" />
+                           </font>
+                        </Text>
+                        <Button fx:id="add3" layoutX="190.0" layoutY="101.0" mnemonicParsing="false" onAction="#handleAddAction" prefHeight="39.0" prefWidth="60.0" text="Add" textFill="#6f4b39">
+                           <font>
+                              <Font name="Verdana" size="10.0" />
+                           </font>
+                        </Button>
+                        <TextField fx:id="quan3" layoutX="118.0" layoutY="101.0" prefHeight="39.0" prefWidth="60.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                        <Text layoutX="118.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantity" textAlignment="CENTER" wrappingWidth="60.0">
+                           <font>
+                              <Font name="Verdana Italic" size="10.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </Pane>
+            <Pane layoutX="597.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <children>
+                  <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#1f93ff00" height="160.0" layoutX="7.0" layoutY="14.0" stroke="#40342e" strokeType="INSIDE" strokeWidth="2.0" width="280.0" />
+                  <AnchorPane layoutX="17.0" layoutY="19.0" prefHeight="150.0" prefWidth="261.0">
+                     <children>
+                        <ImageView fitHeight="150.0" fitWidth="95.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/OM_IcedAmericano.png" />
+                           </image>
+                        </ImageView>
+                        <Text fill="#40342e" layoutX="109.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="brown" text="Iced Americano" textAlignment="CENTER" wrappingWidth="150.0">
+                           <font>
+                              <Font name="Verdana Bold" size="20.0" />
+                           </font>
+                        </Text>
+                        <Button fx:id="add6" layoutX="190.0" layoutY="101.0" mnemonicParsing="false" onAction="#handleAddAction" prefHeight="39.0" prefWidth="60.0" text="Add" textFill="#6f4b39">
+                           <font>
+                              <Font name="Verdana" size="10.0" />
+                           </font>
+                        </Button>
+                        <TextField fx:id="quan6" layoutX="118.0" layoutY="101.0" prefHeight="39.0" prefWidth="60.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                        <Text layoutX="118.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantity" textAlignment="CENTER" wrappingWidth="60.0">
+                           <font>
+                              <Font name="Verdana Italic" size="10.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </Pane>
+            <Pane layoutX="597.0" layoutY="197.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <children>
+                  <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#1f93ff00" height="160.0" layoutX="7.0" layoutY="14.0" stroke="#40342e" strokeType="INSIDE" strokeWidth="2.0" width="280.0" />
+                  <AnchorPane layoutX="17.0" layoutY="19.0" prefHeight="150.0" prefWidth="261.0">
+                     <children>
+                        <ImageView fitHeight="150.0" fitWidth="95.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/OM_StrawberryOverIce.png" />
+                           </image>
+                        </ImageView>
+                        <Text fill="#40342e" layoutX="109.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="brown" text="Strawberry Over Ice" textAlignment="CENTER" wrappingWidth="150.0">
+                           <font>
+                              <Font name="Verdana Bold" size="20.0" />
+                           </font>
+                        </Text>
+                        <Button fx:id="add9" layoutX="190.0" layoutY="101.0" mnemonicParsing="false" onAction="#handleAddAction" prefHeight="39.0" prefWidth="60.0" text="Add" textFill="#6f4b39">
+                           <font>
+                              <Font name="Verdana" size="10.0" />
+                           </font>
+                        </Button>
+                        <TextField fx:id="quan9" layoutX="118.0" layoutY="101.0" prefHeight="39.0" prefWidth="60.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                        <Text layoutX="118.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantity" textAlignment="CENTER" wrappingWidth="60.0">
+                           <font>
+                              <Font name="Verdana Italic" size="10.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </Pane>
+         </children>
+      </GridPane>
+      <Pane layoutX="882.0" layoutY="186.0" prefHeight="616.0" prefWidth="401.0">
+         <children>
+            <Button fx:id="chkout" alignment="CENTER" layoutX="57.0" layoutY="552.0" mnemonicParsing="false" onAction="#placeAllOrders" prefHeight="39.0" prefWidth="288.0" styleClass="button-normal" text="Place Order" textFill="#40342e">
+               <font>
+                  <Font name="Verdana Bold" size="20.0" />
+               </font>
+            </Button>
+            <GridPane layoutX="28.0" layoutY="14.0" prefHeight="188.0" prefWidth="345.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="203.0" minWidth="10.0" prefWidth="173.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="206.0" minWidth="10.0" prefWidth="172.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Text fill="#40342e" strokeType="OUTSIDE" strokeWidth="0.0" text="Size:" wrappingWidth="165.13671875">
+                     <font>
+                        <Font name="Verdana Bold Italic" size="16.0" />
+                     </font>
+                  </Text>
+                  <RadioButton fx:id="sizeA" mnemonicParsing="false" prefHeight="24.0" prefWidth="165.0" text="12 oz" textFill="#40342e" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Verdana" size="14.0" />
+                     </font>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="size" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="sizeB" mnemonicParsing="false" prefHeight="24.0" prefWidth="165.0" text="20 oz" textFill="#40342e" toggleGroup="$size" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Verdana" size="14.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton fx:id="tempB" mnemonicParsing="false" prefHeight="24.0" prefWidth="200.0" text="Hot" textFill="#40342e" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Verdana" size="14.0" />
+                     </font>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="temp" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="tempA" mnemonicParsing="false" prefHeight="24.0" prefWidth="200.0" text="Cold" textFill="#40342e" toggleGroup="$temp" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Verdana" size="14.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton fx:id="addon1" mnemonicParsing="false" prefHeight="24.0" prefWidth="165.0" text="Decaf" textFill="#40342e" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="Verdana" size="14.0" />
+                     </font>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="addons" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="addon3" layoutX="10.0" layoutY="15.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="165.0" text="Drizzle" textFill="#40342e" toggleGroup="$addons" GridPane.rowIndex="6">
+                     <font>
+                        <Font name="Verdana" size="14.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton fx:id="addon4" layoutX="10.0" layoutY="83.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="165.0" text="Espresso Shot" textFill="#40342e" toggleGroup="$addons" GridPane.rowIndex="7">
+                     <font>
+                        <Font name="Verdana" size="14.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton fx:id="addon5" layoutX="10.0" layoutY="117.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="200.0" text="Cold Foam" textFill="#40342e" toggleGroup="$addons" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="Verdana" size="14.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton fx:id="addon6" layoutX="160.0" layoutY="15.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="200.0" text="Coffee Jelly" textFill="#40342e" toggleGroup="$addons" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                     <font>
+                        <Font name="Verdana" size="14.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton fx:id="addon7" layoutX="160.0" layoutY="49.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="200.0" text="Ice Cream Scoop" textFill="#40342e" toggleGroup="$addons" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                     <font>
+                        <Font name="Verdana" size="14.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton fx:id="addon2" layoutX="10.0" layoutY="15.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="165.0" text="Milk Shot" textFill="#40342e" toggleGroup="$addons" GridPane.rowIndex="5">
+                     <font>
+                        <Font name="Verdana" size="14.0" />
+                     </font>
+                  </RadioButton>
+                  <Text fill="#40342e" layoutX="10.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add-ons:" wrappingWidth="165.13671875" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Verdana Bold Italic" size="16.0" />
+                     </font>
+                  </Text>
+               </children>
+            </GridPane>
+            <Pane layoutX="21.0" layoutY="206.0" prefHeight="330.0" prefWidth="360.0">
+               <children>
+                  <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#1f93ff00" height="319.0" layoutX="1.0" layoutY="6.0" stroke="#40342e" strokeType="INSIDE" strokeWidth="2.0" width="360.0" />
+                  <ScrollPane layoutX="8.0" layoutY="73.0" prefHeight="201.0" prefWidth="345.0">
+                     <content>
+                        <TableView fx:id="orderTable" prefHeight="500.0" prefWidth="330.0">
+                           <columns>
+                              <TableColumn fx:id="flavTab" prefWidth="110.0" text="Flavor" />
+                              <TableColumn fx:id="sizeTab" prefWidth="45.0" text="Size" />
+                              <TableColumn fx:id="tempTab" prefWidth="45.0" text="Temp" />
+                              <TableColumn fx:id="addonsTab" prefWidth="85.0" text="Add-ons" />
+                              <TableColumn fx:id="qtyTab" prefWidth="45.0" text="Qty" />
+                           </columns>
+                        </TableView>
+                     </content>
+                  </ScrollPane>
+                  <Button fx:id="clr" alignment="CENTER" layoutX="251.0" layoutY="37.0" mnemonicParsing="false" onAction="#cancelOrders" prefHeight="9.0" prefWidth="95.0" styleClass="button-normal" stylesheets="@../styles/StyleSheet.css" text="Cancel" textAlignment="RIGHT" textFill="#40342e">
+                     <font>
+                        <Font name="Verdana" size="12.0" />
+                     </font>
+                  </Button>
+                  <Text fill="#40342e" layoutX="102.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="brown" text="Order" textAlignment="CENTER" wrappingWidth="159.0">
+                     <font>
+                        <Font name="Verdana Bold" size="20.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#40342e" layoutX="14.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="brown" text="Products:" wrappingWidth="159.0">
+                     <font>
+                        <Font name="Verdana Bold" size="12.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#40342e" layoutX="14.0" layoutY="303.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="brown" text="Total:" wrappingWidth="70.0">
+                     <font>
+                        <Font name="Verdana Bold" size="12.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="tots" layoutX="58.0" layoutY="282.0" prefHeight="30.0" prefWidth="179.0" text="Php 0" textFill="#40342e">
+                     <font>
+                        <Font name="Verdana Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" styleClass="color-yellow" stylesheets="@../styles/StyleSheet.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.LandingPageController">
+   <children>
+      <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="640.0">
+         <children>
+            <Pane layoutX="26.0" layoutY="31.0" prefHeight="739.0" prefWidth="600.0" styleClass="landing-page-image-pane">
+               <children>
+                  <ImageView fitHeight="592.0" fitWidth="600.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/SILI_Image.png" />
+                     </image>
+                     <effect>
+                        <Blend />
+                     </effect>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="640.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="640.0">
+         <children>
+            <Button fx:id="LP_button_login" layoutX="140.0" layoutY="445.0" mnemonicParsing="false" onAction="#LP_button_loginOnAction" prefHeight="66.0" prefWidth="360.0" styleClass="button-main" text="Log In" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Verdana Bold" size="30.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="LP_button_signup" layoutX="140.0" layoutY="562.0" mnemonicParsing="false" onAction="#LP_button_signupOnAction" prefHeight="66.0" prefWidth="360.0" styleClass="button-main" text="Sign Up" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Verdana Bold" size="30.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Circle fill="#da703b00" layoutX="322.0" layoutY="280.0" radius="108.0" stroke="#40342e" strokeType="INSIDE" strokeWidth="5.0" />
+            <Circle fill="#e56d30" layoutX="321.0" layoutY="280.0" radius="88.0" stroke="#40342e" strokeType="INSIDE" strokeWidth="2.0" />
+            <FontAwesomeIcon fill="WHITE" glyphName="USER" layoutX="287.0" layoutY="316.0" selectionEnd="0" selectionStart="0" size="8.5em" text="" textAlignment="CENTER" wrappingWidth="67.96662616729736" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

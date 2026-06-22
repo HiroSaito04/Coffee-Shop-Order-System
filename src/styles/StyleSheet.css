@@ -1,0 +1,40 @@
+.color-transparent{
+    -fx-background-color: rgba(0,0,0,0);
+}
+.color-white{
+    -fx-background-color:white
+}
+.color-brown{
+    -fx-background-color:#40342e
+}
+.color-yellow{
+    -fx-background-color: #f7b932;
+}
+.effect-dropshadow{
+    -fx-effect: dropShadow(three-pass-box, rgba(0, 0, 0, 0.098), 10.0, 0.0, 0.0, 5.0);
+}
+.button-main {
+    -fx-background-color: #c95e28;
+    -fx-background-radius: 20;
+    -fx-effect: dropShadow(three-pass-box, rgba(0, 0, 0, 0.094), 10.0, 0.0, 0.0, 5.0);
+}
+.button-normal {
+    -fx-background-radius: 50;
+    -fx-effect: dropShadow(three-pass-box, rgba(0, 0, 0, 0.098), 10.0, 0.0, 0.0, 5.0);
+}
+.button-transparent {
+    -fx-background-color: transparent;  
+    -fx-effect: dropShadow(three-pass-box, rgba(0, 0, 0, 0.098), 10.0, 0.0, 0.0, 5.0);
+}
+.landing-page-image-pane {
+    -fx-background-color: white;
+    -fx-background-radius: 30;
+}   
+.text-field-Log-Sign {
+    -fx-background-color: white;
+    -fx-background-radius: 20;   
+}
+.CO-list-view {
+    -fx-background-radius: 20;
+    -fx-effect: dropShadow(three-pass-box, rgba(0, 0, 0, 0.098), 10.0, 0.0, 0.0, 5.0);
+}

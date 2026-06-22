@@ -1,0 +1,16 @@
+# Build outputs
+build/
+dist/
+*.class
+*.jar.original
+
+# VS Code temporary Java files
+.vscode/.settings/
+
+# NetBeans private/user files
+nbproject/private/
+nbproject/*.properties.bak
+
+# OS files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,9 @@
+TheChosenOne :Completed: Flavor: Dark Mocha Latte | Size: 12 Oz | Temp: Cold | Addons: Milk Shot | Quantity: 4
+
+TheChosenOne :Completed: Flavor: Strawberry Over Ice | Size: 20 Oz | Temp: Hot | Addons: Milk Shot | Quantity: 5
+Completed: Flavor: Iced Americano | Size: 12 Oz | Temp: Cold | Addons: Decaf | Quantity: 5
+
+TheChosenOne :Completed: Flavor: Dirty Macha Latte | Size: 20 Oz | Temp: Hot | Addons: Milk Shot | Quantity: 2
+
+TheChosenOne :Completed: Flavor: Chocolate Pistachio | Size: 20 Oz | Temp: Hot | Addons: Cold Foam | Quantity: 6
+

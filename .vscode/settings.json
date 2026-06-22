@@ -1,0 +1,13 @@
+{
+  "java.project.sourcePaths": [
+    "src"
+  ],
+  "java.project.outputPath": "build/classes",
+  "java.project.referencedLibraries": [
+    "library/**/*.jar",
+    "javafx-sdk-21.0.11/lib/*.jar"
+  ],
+  "java.compile.nullAnalysis.mode": "disabled",
+  "java.errors.incompleteClasspath.severity": "ignore",
+  "java.autobuild.enabled": false
+}
